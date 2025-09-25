@@ -1,11 +1,12 @@
-import { Component, ViewChild } from '@angular/core';
+import { Component, OnInit, ViewChild } from '@angular/core';
 import { FormsModule } from '@angular/forms';
 import {
+  IonAvatar,
   IonButton,
   IonButtons,
   IonContent,
   IonHeader,
-  IonInput,
+  IonImg,
   IonItem,
   IonLabel,
   IonList,
@@ -21,23 +22,30 @@ import { OverlayEventDetail } from '@ionic/core/components';
   styleUrls: ['home.page.scss'],
   imports: [
     FormsModule,
-    IonModal,
+    IonAvatar,
     IonButton,
     IonButtons,
     IonContent,
     IonHeader,
-    IonInput,
+    IonImg,
     IonItem,
     IonLabel,
     IonList,
+    IonModal,
     IonTitle,
     IonToolbar,
   ],
 })
-export class HomePage {
+export class HomePage implements OnInit {
   @ViewChild(IonModal) modal!: IonModal;
   message = 'This modal example uses triggers to automatically open a modal when the button is clicked.';
   name!: string;
+
+  presentingElement!: HTMLElement | null;
+
+  ngOnInit() {
+    this.presentingElement = document.querySelector('.ion-page');
+  }
 
   cancel() {
     this.modal.dismiss(null, 'cancel');
