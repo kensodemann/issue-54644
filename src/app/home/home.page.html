@@ -1,21 +1,107 @@
-<ion-header [translucent]="true">
-  <ion-toolbar>
-    <ion-title> Blank </ion-title>
-  </ion-toolbar>
-</ion-header>
-
-<ion-content [fullscreen]="true">
-  <ion-header collapse="condense">
+<div class="ion-page" #page>
+  <ion-header [translucent]="true">
     <ion-toolbar>
-      <ion-title size="large">Blank</ion-title>
+      <ion-title> Blank </ion-title>
     </ion-toolbar>
   </ion-header>
 
-  <div id="container">
-    <strong>Ready to create an app?</strong>
-    <p>
-      Start with Ionic
-      <a target="_blank" rel="noopener noreferrer" href="https://ionicframework.com/docs/components">UI Components</a>
-    </p>
-  </div>
-</ion-content>
+  <ion-content [fullscreen]="true">
+    <ion-header collapse="condense">
+      <ion-toolbar>
+        <ion-title size="large">Blank</ion-title>
+      </ion-toolbar>
+    </ion-header>
+
+    <ion-button id="open-modal" expand="block">Open</ion-button>
+
+    <ion-list [inset]="true">
+      <ion-item>
+        <ion-label>Pokémon Yellow</ion-label>
+      </ion-item>
+      <ion-item>
+        <ion-label>Mega Man X</ion-label>
+      </ion-item>
+      <ion-item>
+        <ion-label>The Legend of Zelda</ion-label>
+      </ion-item>
+      <ion-item>
+        <ion-label>Pac-Man</ion-label>
+      </ion-item>
+      <ion-item>
+        <ion-label>Super Mario World</ion-label>
+      </ion-item>
+      <ion-item>
+        <ion-label>Superman</ion-label>
+      </ion-item>
+      <ion-item>
+        <ion-label>Batman</ion-label>
+      </ion-item>
+      <ion-item>
+        <ion-label>Spider Man</ion-label>
+      </ion-item>
+      <ion-item>
+        <ion-label>Underdog</ion-label>
+      </ion-item>
+      <ion-item>
+        <ion-label>Captain Underpants</ion-label>
+      </ion-item>
+      <ion-item>
+        <ion-label>Fred Flintstone</ion-label>
+      </ion-item>
+      <ion-item>
+        <ion-label>Wilma Flintstone</ion-label>
+      </ion-item>
+      <ion-item>
+        <ion-label>Pebbles Flintstone</ion-label>
+      </ion-item>
+      <ion-item>
+        <ion-label>Dino</ion-label>
+      </ion-item>
+      <ion-item>
+        <ion-label>Barney Rubble</ion-label>
+      </ion-item>
+      <ion-item>
+        <ion-label>Betty Rubble</ion-label>
+      </ion-item>
+      <ion-item>
+        <ion-label>Bam Bam Rubble</ion-label>
+      </ion-item>
+      <ion-item>
+        <ion-label>Barney Miller</ion-label>
+      </ion-item>
+      <ion-item>
+        <ion-label>Dino</ion-label>
+      </ion-item>
+      <ion-item>
+        <ion-label>Do the Bartman</ion-label>
+      </ion-item>
+    </ion-list>
+
+    <ion-modal trigger="open-modal" (willDismiss)="onWillDismiss($event)" [presentingElement]="page">
+      <ng-template>
+        <ion-header>
+          <ion-toolbar>
+            <ion-buttons slot="start">
+              <ion-button (click)="cancel()">Cancel</ion-button>
+            </ion-buttons>
+            <ion-title>Welcome</ion-title>
+            <ion-buttons slot="end">
+              <ion-button (click)="confirm()" [strong]="true">Confirm</ion-button>
+            </ion-buttons>
+          </ion-toolbar>
+        </ion-header>
+        <ion-content class="ion-padding">
+          <ion-item>
+            <ion-input
+              label="Enter your name"
+              labelPlacement="stacked"
+              type="text"
+              placeholder="Your name"
+              [(ngModel)]="name"
+            ></ion-input>
+          </ion-item>
+        </ion-content>
+      </ng-template>
+    </ion-modal>
+  </ion-content>
+</div>
