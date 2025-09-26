@@ -5,7 +5,7 @@
     </ion-toolbar>
   </ion-header>
 
-  <ion-content>
+  <ion-content [scrollY]="false">
     <ion-button id="open-modal" expand="block">Open</ion-button>
 
     <ion-list [inset]="true">
@@ -84,7 +84,7 @@
             </ion-buttons>
           </ion-toolbar>
         </ion-header>
-        <ion-content class="ion-padding">
+        <ion-content class="ion-padding" [scrollY]="false">
           <ion-list>
             <ion-item>
               <ion-avatar slot="start">
