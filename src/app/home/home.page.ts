@@ -13,6 +13,7 @@ import {
   IonTitle,
   IonToolbar,
   IonModal,
+  IonInput,
 } from '@ionic/angular/standalone';
 import { OverlayEventDetail } from '@ionic/core/components';
 
@@ -21,6 +22,7 @@ import { OverlayEventDetail } from '@ionic/core/components';
   templateUrl: 'home.page.html',
   styleUrls: ['home.page.scss'],
   imports: [
+    IonInput,
     FormsModule,
     IonAvatar,
     IonButton,
